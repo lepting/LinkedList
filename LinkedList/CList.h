@@ -135,13 +135,13 @@ T * CList<T>::GetNext(T * tElement)
 	}
 	if (head->Element() == tElement)
 	{
-		return head->Next() != NULL ? head->Next() : NULL;
+		return head->Next() != NULL ? head->Next()->Element() : NULL;
 	}
 
 	CNode<T>* lst = head->Next();
 	while (lst != NULL)
 	{
-		if (lst->Element == tElement)
+		if (lst->Element() == tElement)
 		{
 			return lst->Next() != NULL ? lst->Next()->Element() : NULL;
 		}
